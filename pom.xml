@@ -57,12 +57,35 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 		</dependency>
-
+		<!--mybatis配置-->
+		<dependency>
+			<groupId>org.mybatis.spring.boot</groupId>
+			<artifactId>mybatis-spring-boot-starter</artifactId>
+			<version>1.3.0</version>
+		</dependency>
 		<!--热部署配置-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
 			<optional>true</optional>
+		</dependency>
+		<!--mysql配置-->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.35</version>
+		</dependency>
+		<!-- alibaba的druid数据库连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.11</version>
+		</dependency>
+		<!-- alibaba的druid数据库连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+			<version>1.1.0</version>
 		</dependency>
 	</dependencies>
 
@@ -73,6 +96,17 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<fork>true</fork>
+				</configuration>
+			</plugin>
+			<!-- mybatis generator 自动生成代码插件 -->
+			<plugin>
+				<groupId>org.mybatis.generator</groupId>
+				<artifactId>mybatis-generator-maven-plugin</artifactId>
+				<version>1.3.2</version>
+				<configuration>
+					<configurationFile>${basedir}/src/main/resources/generator/generatorConfig.xml</configurationFile>
+					<overwrite>true</overwrite>
+					<verbose>true</verbose>
 				</configuration>
 			</plugin>
 		</plugins>
