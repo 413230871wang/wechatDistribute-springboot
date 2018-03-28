@@ -3,6 +3,7 @@ package com.example.demo;
 
 import com.example.demo.bean.BookBean;
 import com.example.demo.bean.Person;
+import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ import java.util.List;
 
 @RestController
 @SpringBootApplication
+@MapperScan("com.example.demo.mapper")
 public class DemoApplication {
 
 	public static void main(String[] args) {

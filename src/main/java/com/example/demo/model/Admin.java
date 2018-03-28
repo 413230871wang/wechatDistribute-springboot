@@ -1,7 +1,13 @@
 package com.example.demo.model;
 
+import org.apache.ibatis.type.Alias;
+
 import java.util.Date;
 
+/**
+ * 后台管理员用户类
+ */
+@Alias("admin")
 public class Admin {
     private Integer id;
 
